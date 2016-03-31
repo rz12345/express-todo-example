@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <form action="/create" method="post">
+    	<input type="text" name="content" placeholder="write somethings todo..." /> <input type="submit" value="Submit"/>
+    </form> 
+    <hr/>   
+    <% todos.forEach(function(todo){ %>
+	<p>
+		<a href="/edit/<%= todo._id %>"><%= todo.content %></a> [ <a href="/destory/<%= todo._id %>">X</a> ]
+	</p>
+    <% }); %>
+  </body>
+</html>
